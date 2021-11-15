@@ -21,8 +21,15 @@ const Products = () => {
     console.log("Products items = ", items)
 
     return(
-        <>
+        <div id="main">
+            <div id="one">
+            <h1>Sed amet aliquam</h1>
+            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna.</p>
+            </div>
+  
+
             {
+                
                 items.map(item=>(
                     <div className={'item-card' }  key={item.id}>
                     <div className={'bg-img order'+ (((item.id+1)*2-1)+(item.id%2*(1)))%2 }>
@@ -38,14 +45,12 @@ const Products = () => {
                     <div className={'text order'+ (((item.id+1)*2)+(item.id%2*(-1)) )%2  }>
                         <h2>{item.name}</h2>
                         <p>{item.instructions}</p>
-                        <p>{item.location}</p>
+                        <button>LEARN MORE</button>
                     </div>
-    
-    
                 </div>
                 ))
             }
-        </>
+        </div>
     )
 }
 export default Products;
