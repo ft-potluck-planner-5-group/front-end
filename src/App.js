@@ -1,17 +1,24 @@
 
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import {Link, Routes, Route} from 'react-router-dom';
 
 import Header from './components/Header';
+import SignUp from './components/SignUp';
+
 
 function App() {
   return (
-  <Router>
-    <Header />
-    <Routes>
-      
-    </Routes>
-  </Router>
+    <div>
+      <nav>
+        <Link id='icon' to='/'><h1>Name</h1></Link>
+        <Link to='/login'>Login</Link>
+        <Link to='/signup'>Sign Up</Link>
+      </nav>
+
+      <Routes>
+        <Route exact path='/signup' element={<SignUp/>}/>
+      </Routes>
+    </div>
   );
 }
 
