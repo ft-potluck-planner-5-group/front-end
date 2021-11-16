@@ -1,7 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-body{
-    background-image: linear-gradient(to right, #4d91ff, #a24ef5);
+.signup-dev{
+    
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+    background-image: url('../images/food1.jpg');
+    background-size: cover;
+    background-position: center;
+    /* border:3px solid red; */
+
 }
 
 .container {
@@ -22,6 +33,11 @@ body{
     margin-bottom: 10%;
     position: relative;
     /* bottom: 30px; */
+}
+
+.app-wrapper h1{
+    color: #9541e8;
+    font: 2.6em sans-serif; 
 }
 
 .input {
