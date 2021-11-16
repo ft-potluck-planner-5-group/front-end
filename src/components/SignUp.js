@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import validation from '../validation/validation'
 import '../CSS/SignUp.css'
+
+
 const SignUp = () => {
     const [values, setValues] = useState({
         name: '',
