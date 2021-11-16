@@ -23,7 +23,7 @@ function App() {
       fetchStock().then(res => setItems(res.data))
   }, [])
 
-  console.log("App.js props = ", items)
+  // console.log("App.js props = ", items)
 
   return (
   <Router>
