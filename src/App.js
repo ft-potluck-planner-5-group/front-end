@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 import Header from './components/Header';
 import Home from './components/Home';
-// import Login from './components/Login';
+import SignUp from './components/SignUp';
 import Products from './components/Products';
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
     <Header />
     <Switch>
         <Route exact path="/" component={Home}/>
-        {/* <Route path="/login" component={Login} /> */}
+        <Route path="/signup" component={SignUp} /> 
         <Route path='/products'component={Products}/> 
     </Switch>
   </Router>
@@ -21,4 +21,6 @@ function App() {
 }
 
 export default App;
+
+
 
