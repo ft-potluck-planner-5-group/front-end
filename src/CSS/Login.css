@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.login-dev{
+    
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 93vh;
+    background-image: url('../images/food1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 50%;
+    margin: 15% 20%;
+    padding: 4% 0;
+    background-color: #6fc3df;
+    border-radius: 50%;
+    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
+    border:3px solid black;
+}
+
+.app-wrap {
+    color: #E5DCC3;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 10%;
+    position: relative;
+}
+
+.app-wrap h1{
+    color: #E5DCC3;
+    font: 2.6em sans-serif; 
+    font-weight: bold;
+}
+
+.iput {
+    display: flex;
+    margin-bottom: 10%;
+    outline-color: #9541e8;
+    width: 230px;
+    height: 20px;
+    border-radius: 4px;
+}
+label {
+    color: black;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.2em;
+}
+
+.button {
+    background-image: linear-gradient(to right, #4d91ff, #a24ef5);
+    color: white;
+    padding: 25%;
+    border: none;
+    border-radius: 20px;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}

@@ -8,6 +8,7 @@ import Home from './components/Home';
 import SignUp from './components/SignUp';
 import Products from './components/Products';
 import Product from './components/Product';
+import Login from './components/Login';
 
 import data from './data'
 function fetchStock() {
@@ -29,6 +30,9 @@ function App() {
     <Header />
     <Switch>
         <Route exact path="/" component={Home}/>
+
+        <Route path="/login" component={Login}/>
+
         <Route path="/signup" component={SignUp} /> 
      
         <Route path="/products/:id"
