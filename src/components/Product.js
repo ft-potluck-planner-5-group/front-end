@@ -1,38 +1,25 @@
 
-import React, { useState, useEffect } from 'react';
-import { 
-    Route, 
-    Switch, 
-    useRouteMatch, 
-    useParams, 
-    NavLink 
-  } from 'react-router-dom';
+import React from 'react';
+import { useParams} from 'react-router-dom';
 
 
-import data from '../data'
-import '../CSS/products.css'
 
-function fetchStock() {
-    return Promise.resolve({ success: true, data })
-  }
+import '../CSS/product.css'
 
 
 const Product = (props) => {
-    const [items, setItems] = useState([])
-    const  url  = useRouteMatch().url;
+    const {items} = props
+
     const { id } = useParams();
 
-    useEffect(() => {
-        fetchStock().then(res => setItems(res.data))
-    }, [])
 
-    console.log(props)
+    // console.log(props)
     const item = items.find(item => item.id === parseInt(id));
-    console.log("item = ",item.name)
+    // console.log("item = ",item)
     return (
-        <div>
+        <div className='product-div'>
             <h1>Generic</h1>
-             {/* <img src='../imaages/pic11.jpg'  /> */}
+             <img src='https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/pic11.jpg' alt='pic11.jpg' />
             <p>{item.detailed1}</p>
 
             <p>{item.detailed2}</p>

@@ -1,24 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, useRouteMatch } from 'react-router-dom';
 
 
-import data from '../data'
 import '../CSS/products.css'
 
-function fetchStock() {
-    // fetchStock simulates getting data through axios.get(<URL>)
-    return Promise.resolve({ success: true, data })
-  }
 
-
-const Products = () => {
-    const [items, setItems] = useState([])
+const Products = (props) => {
+    const {items} = props
+ 
     const  url  = useRouteMatch().url;
-
-    useEffect(() => {
-        fetchStock().then(res => setItems(res.data))
-    }, [])
-
     // console.log("Products items = ", items)
 
     return(
