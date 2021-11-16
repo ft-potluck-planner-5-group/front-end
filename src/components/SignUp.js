@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import validation from '../validation/validation'
+import '../CSS/SignUp.css'
 const SignUp = () => {
     const [values, setValues] = useState({
         name: '',
@@ -27,36 +28,37 @@ const SignUp = () => {
 
             <form className='form-wrapper'>
                 <div className="name">
-                    <label className="nlabel">Full Name</label>
+                {errors.name && <p className='error'>{errors.name}</p>}
+                    <label className="nlabel">Username:</label>
                     <input type="text" 
                     className="input" 
                     name='name' 
                     value={values.name}
                     onChange={handleChange}
                     />
-                    {errors.name && <p className='error'>{errors.name}</p>}
                 </div>
                 <div className="email">
-                    <label className="elabel">Email</label>
+                {errors.email && <p className='error'>{errors.email}</p>}
+                    <label className="elabel">Email:</label>
                     <input type="text" 
                     className="input" 
                     name='email' value={values.email}
                     onChange={handleChange}
                     />
-                    {errors.email && <p className='error'>{errors.email}</p>}
                 </div>
                 <div className="password">
-                    <label className="plabel">Password</label>
+                {errors.password && <p className='error'>{errors.password}</p>}
+                    <label className="plabel">Password:</label>
                     <input type="text" 
                     className="input" 
                     name='password' 
                     value={values.password}
                     onChange={handleChange}
                     />
-                    {errors.password && <p className='error'>{errors.password}</p>}
+
                 </div>
                 <div>
-                    <button className='subutton' onClick={handleFormSubmit}>Sign Up</button>
+                    <button className='subutton' onClick={handleFormSubmit}>SIGN UP</button>
                 </div>
             </form>
         </div>
