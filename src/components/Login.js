@@ -1,17 +1,33 @@
 import React, { useState } from "react";
+import { useHistory } from 'react-router-dom';
 import validation from '../validation/validation';
 import '../CSS/Login.css';
 
+import axios from 'axios';
+
 const Login = () => {
     const [values, setValues] = useState({
-        name: '',
+        username: '',
         password: ''
 })
 const [errors, setErrors] = useState({});
+const {push} = useHistory()
 
-const formSubmit = (evt) => {
-    evt.preventDefault();
-    setErrors(validation(values))
+const formSubmit = (e) => {
+    e.preventDefault();
+    // setErrors(validation(values))
+    e.preventDefault();
+    axios.post('http://localhost:4000/api/login', values)
+    .then(resp=>{
+    console.log("login : resp = ",resp);
+    console.log("login : resp.data = ",resp.data);
+    localStorage.setItem('token', resp.data.payload);
+    push('/products');
+    // console.log(this.props)
+    })
+    .catch(err=>{
+    console.log(err);
+    })
 }
 
 const inputChange = (evt) => {
@@ -28,11 +44,11 @@ return (
         <form className='form-wrap'>
             <label>
             {errors.name && <p className='error'>{errors.name}</p>}
-            Username: <input type="text" className='iput' name='name' value={values.name} onChange={inputChange} />
+            Username: <input type="text" className='iput' name='username' value={values.username} onChange={inputChange} />
             </label>
             <label>
             {errors.password && <p className='error'>{errors.password}</p>}
-            Password: <input type="text" className='iput' name='name' value={values.password} onChange={inputChange} />
+            Password: <input type="text" className='iput' name='password' value={values.password} onChange={inputChange} />
             </label>
         </form>
         <div>
