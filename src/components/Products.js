@@ -13,8 +13,9 @@ const Products = (props) => {
     const  url  = useRouteMatch().url;
 
     useEffect(() => {
-        axiosWithAuth().get('/products')
+        axiosWithAuth().get('/potlucks')
           .then(resp => {
+              console.log(resp.data)
             setItems(resp.data);
           })
           .catch(err => {

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import validation from '../validation/validation';
 import '../CSS/Login.css';
 
-import axios from 'axios';
+import axiosWithAuth from "./utils/axiosWithAuth";
 
 const Login = () => {
     const [values, setValues] = useState({
@@ -17,12 +17,13 @@ const formSubmit = (e) => {
     e.preventDefault();
     setErrors(validation(values))
     e.preventDefault();
-    axios.post('http://localhost:4000/api/login', values)
+    axiosWithAuth()
+    .post('/users/login', values)
     .then(resp=>{
-    console.log("login : resp = ",resp);
-    console.log("login : resp.data = ",resp.data);
-    localStorage.setItem('token', resp.data.payload);
-    push('/products');
+    // console.log("login : resp = ",resp);
+    // console.log("login : resp.data = ",resp.data);
+    localStorage.setItem('token', resp.data.token);
+    push('/potlucks');
     // console.log(this.props)
     })
     .catch(err=>{
