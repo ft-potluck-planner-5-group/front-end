@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
-import validation from '../validation/validation';
 import '../CSS/Login.css';
 
 import axios from 'axios';

@@ -6,61 +6,71 @@ const app = express();
 const token =
   'esfeyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NUIhkufemQifQ';
 
-let friends = [
-  {
-    id: 1,
-    name: 'Rachel Green',
-    imageUrl: 'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food2.jpg',
-    instructions: 'rachel@friends.com',
-    detailed1:'a',
-    detailed2:'b',
-    detailed3:'c'
-  },
-  {
-    id: 2,
-    name: 'Joey Tribbiani',
-    imageUrl: 'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food2.jpg',
-    instructions: 'rachel@friends.com',
-    detailed1:'a',
-    detailed2:'b',
-    detailed3:'c'
-  },
-  {
-    id: 3,
-    name: 'Chandler Bing',
-    imageUrl: 'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food2.jpg',
-    instructions: 'rachel@friends.com',
-    detailed1:'a',
-    detailed2:'b',
-    detailed3:'c'
-  },
-  {
-    id: 4,
-    name: 'Ross Geller',
-    imageUrl: 'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food2.jpg',
-    instructions: 'rachel@friends.com',
-    detailed1:'a',
-    detailed2:'b',
-    detailed3:'c'
-  },
-  {
-    id: 5,
-    name: 'Monica Bing',
-    imageUrl: 'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food2.jpg',
-    instructions: 'rachel@friends.com',
-    detailed1:'a',
-    detailed2:'b',
-    detailed3:'c'
-  },
-  {
-    id: 6,
-    name: 'Phoebe Buffay-Hannigan',
-    imageUrl: 'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food2.jpg',
-    instructions: 'rachel@friends.com',
-    detailed1:'a',
-    detailed2:'b',
-    detailed3:'c'
-  }
+let products = [
+    {
+        name: 'Orci maecenas',
+        id: 0,
+        imageUrl:
+        'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food2.jpg',
+        instructions:
+          "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.",
+        detailed1:'Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.',
+        detailed2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.',
+        detailed3:'Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.'
+     },
+      {
+        name: 'Rhoncus magna',
+        id: 1,
+        imageUrl:
+           'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food3.jpg',
+        instructions:
+          "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.",
+        detailed1:'Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.',
+        detailed2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.',
+        detailed3:'Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.'
+      },
+      {
+        name: 'Sed nunc ligula',
+        id: 2,
+        imageUrl:'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food4.jpg',
+        instructions:
+          'Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.',
+        detailed1:'Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.',
+        detailed2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.',
+        detailed3:'Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.'
+     },
+     {
+        name: 'Orci maecenas',
+        id: 3,
+        imageUrl:
+        'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food2.jpg',
+        instructions:
+          "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.",
+        detailed1:'Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.',
+        detailed2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.',
+        detailed3:'Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.'
+     },
+      {
+        name: 'Rhoncus magna',
+        id: 4,
+        imageUrl:
+           'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food3.jpg',
+        instructions:
+          "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.",
+        detailed1:'Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.',
+        detailed2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.',
+        detailed3:'Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.'
+      },
+      {
+        name: 'Sed nunc ligula',
+        id: 5,
+        imageUrl:'https://raw.githubusercontent.com/ft-potluck-planner-5-group/front-end/products/src/images/food4.jpg',
+        instructions:
+          'Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.',
+        detailed1:'Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.',
+        detailed2:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.',
+        detailed3:'Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.'
+     },
 ];
 
 app.use(bodyParser.json());
@@ -103,28 +113,28 @@ app.post('/api/logout', authenticator, (req, res) => {
   });
 });
 
-app.get('/api/friends', authenticator, (req, res) => {
+app.get('/api/products', authenticator, (req, res) => {
   setTimeout(() => {
-    res.send(friends);
+    res.send(products);
   }, 1000);
 });
 
-app.get('/api/friends/:id', authenticator, (req, res) => {
-  const friend = friends.find(f => f.id == req.params.id);
+app.get('/api/projects/:id', authenticator, (req, res) => {
+  const product = products.find(f => f.id == req.params.id);
 
-  if (friend) {
-    res.status(200).json(friend);
+  if (product) {
+    res.status(200).json(product);
   } else {
     res.status(404).send({ msg: 'Friend not found' });
   }
 });
 
-app.post('/api/friends', authenticator, (req, res) => {
-  const friend = { id: getNextId(), ...req.body };
+app.post('/api/projects', authenticator, (req, res) => {
+  const product = { id: getNextId(), ...req.body };
 
-  friends = [...friends, friend];
+  products = [...products, product];
 
-  res.send(friends);
+  res.send(products);
 });
 
 app.get('/api/', (req, res) => {
