@@ -1,21 +1,29 @@
 
-import React from 'react';
-import { useParams} from 'react-router-dom';
 
+import { useParams} from 'react-router-dom';
+import React, { useState, useEffect } from 'react'
 
 
 import '../CSS/product.css'
+import axiosWithAuth from './utils/axiosWithAuth';
 
 
 const Product = (props) => {
-    const {items} = props
-
+    // const {items} = props
+    const [item, setItem] = useState([])
     const { id } = useParams();
 
+    useEffect(() => {
+        axiosWithAuth().get(`/products/${id}`)
+          .then(resp => {
+            setItem(resp.data);
+          })
+          .catch(err => {
+            console.log(err);
+          })
+      }, [])
 
-    // console.log(props)
-    const item = items.find(item => item.id === parseInt(id));
-    // console.log("item = ",item)
+    // console.log("Product item = ",item)
     return (
         <div className='product-div'>
             <h1>Generic</h1>

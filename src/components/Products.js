@@ -1,14 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom';
 
 
 import '../CSS/products.css'
+import axiosWithAuth from './utils/axiosWithAuth';
+
 
 
 const Products = (props) => {
-    const {items} = props
- 
+    // const {items} = props
+    const [items, setItems] = useState([])
     const  url  = useRouteMatch().url;
+
+    useEffect(() => {
+        axiosWithAuth().get('/products')
+          .then(resp => {
+            setItems(resp.data);
+          })
+          .catch(err => {
+            console.log(err);
+          })
+        // fetchStock().then(res => setItems(res.data))
+      }, [])
+
+    
     // console.log("Products items = ", items)
 
     return(

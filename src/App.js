@@ -1,7 +1,8 @@
 
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import PrivateRoute from './components/PrivateRoute';
+import React from 'react';
 
 import Header from './components/Header';
 import Home from './components/Home';
@@ -11,21 +12,8 @@ import Product from './components/Product';
 import Login from './components/Login';
 import Logout from './components/Logout';
 
-import data from './data'
-function fetchStock() {
-  return Promise.resolve({ success: true, data })
-}
 
 function App() {
-  const [items, setItems] = useState([])
- 
-
-  useEffect(() => {
-      fetchStock().then(res => setItems(res.data))
-  }, [])
-
-  // console.log("App.js props = ", items)
-
   return (
   <Router>
     <Header />
@@ -34,15 +22,10 @@ function App() {
 
         <Route path="/login" component={Login}/>
         <Route path="/logout" component={Logout}/>
-
         <Route path="/signup" component={SignUp} /> 
-     
-        <Route path="/products/:id"
-          render={props => <Product items={items} />}
-        />
-        <Route path="/products"
-          render={props => <Products items={items}  />}
-        />
+        <PrivateRoute path="/products/:id"   component={Product} /> 
+        <PrivateRoute path="/products"   component={Products} /> 
+  
     </Switch>
   </Router>
   );
