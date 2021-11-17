@@ -119,7 +119,7 @@ app.get('/api/products', authenticator, (req, res) => {
   }, 1000);
 });
 
-app.get('/api/projects/:id', authenticator, (req, res) => {
+app.get('/api/products/:id', authenticator, (req, res) => {
   const product = products.find(f => f.id == req.params.id);
 
   if (product) {

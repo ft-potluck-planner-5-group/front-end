@@ -23,7 +23,6 @@ const Products = (props) => {
         // fetchStock().then(res => setItems(res.data))
       }, [])
 
-      console.log("App stock = ", items)
     
     // console.log("Products items = ", items)
 
