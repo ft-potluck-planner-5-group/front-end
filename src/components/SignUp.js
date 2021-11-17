@@ -1,27 +1,37 @@
 import React, {useState} from 'react'
 import validation from '../validation/validation'
 import '../CSS/SignUp.css'
+import axios from 'axios'
 
+const initialValues = {
+    username: '',
+    password: ''
+}
 
 const SignUp = () => {
-    const [values, setValues] = useState({
-        name: '',
-        email: '',
-        password: ''
-    })
+    const [user, setUser] = useState(initialValues)
 
     const [errors, setErrors] = useState({});
 
-    const handleFormSubmit = (evt) => {
-        evt.preventDefault();
-        setErrors(validation(values))
-    }
-
     const handleChange = (evt) => {
-        setValues({
-            ...values, [evt.target.name]: evt.target.value
+        setUser({
+            ...user, [evt.target.name]: evt.target.value
         })
     }
+
+    const postNewUser = evt => {
+        axios.post('https://backend-potluck-planner.herokuapp.com/api/users/register', user)
+        .then(res => {
+            console.log(user)
+            console.log(res)
+            setUser(initialValues)
+        })
+        .catch(err => console.error(err))
+        console.log('clicked')
+        evt.preventDefault()
+    }
+
+    
     return (
         <div className='signup-dev'>
             <div className='container'>
@@ -31,21 +41,12 @@ const SignUp = () => {
 
                 <form className='form-wrapper'>
                     <div className="name">
-                    {errors.name && <p className='error'>{errors.name}</p>}
+                    {errors.username && <p className='error'>{errors.username}</p>}
                         <label className="nlabel">Username:</label>
                         <input type="text" 
                         className="input" 
-                        name='name' 
-                        value={values.name}
-                        onChange={handleChange}
-                        />
-                    </div>
-                    <div className="email">
-                    {errors.email && <p className='error'>{errors.email}</p>}
-                        <label className="elabel">Email:</label>
-                        <input type="text" 
-                        className="input" 
-                        name='email' value={values.email}
+                        name='username' 
+                        value={user.username}
                         onChange={handleChange}
                         />
                     </div>
@@ -55,13 +56,13 @@ const SignUp = () => {
                         <input type="text" 
                         className="input" 
                         name='password' 
-                        value={values.password}
+                        value={user.password}
                         onChange={handleChange}
                         />
 
                     </div>
                     <div>
-                        <button className='subutton' onClick={handleFormSubmit}>SIGN UP</button>
+                        <button className='subutton' onClick={postNewUser}>SIGN UP</button>
                     </div>
                 </form>
             </div>

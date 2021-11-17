@@ -2,16 +2,10 @@
 const validation = (values) => {
     let errors = {};
 
-    if(!values.name) {
-        errors.name='A name is required'
-    } else if (values.name.length < 3) {
-        errors.name='Name must be at least 3 characters long'
-    }
-
-    if(!values.email) {
-        errors.email='Email is required'
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-        errors.email='Email is invalid'
+    if(!values.username) {
+        errors.username='A name is required'
+    } else if (values.username.length < 3) {
+        errors.username='Name must be at least 3 characters long'
     }
 
     if(!values.password) {
