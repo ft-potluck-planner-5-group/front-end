@@ -19,12 +19,11 @@ function App() {
     <Header />
     <Switch>
         <Route exact path="/" component={Home}/>
-
         <Route path="/login" component={Login}/>
         <Route path="/logout" component={Logout}/>
         <Route path="/signup" component={SignUp} /> 
-        <PrivateRoute path="/products/:id"   component={Product} /> 
-        <PrivateRoute path="/products"   component={Products} /> 
+        <PrivateRoute path="/potucks/:potluck_id"   component={Product} /> 
+        <PrivateRoute path="/potlucks"   component={Products} /> 
   
     </Switch>
   </Router>

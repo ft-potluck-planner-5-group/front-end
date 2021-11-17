@@ -14,8 +14,9 @@ const Product = (props) => {
     const { id } = useParams();
 
     useEffect(() => {
-        axiosWithAuth().get(`/products/${id}`)
+        axiosWithAuth().get(`/potlucks/:potluck_${id}`)
           .then(resp => {
+            console.log(resp)
             setItem(resp.data);
           })
           .catch(err => {

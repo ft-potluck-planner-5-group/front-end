@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom'
 import '../CSS/Header.css';
 
@@ -10,7 +10,7 @@ const Header = () => {
             <div className="left-links">
                 <Link className="link" to='/'>Home</Link>
                 {
-                    isLoggedIn ? <Link className="link" to='/products'>Products</Link> : ''
+                    isLoggedIn ? <Link className="link" to='/potlucks'>Products</Link> : ''
                 }
             </div>
             <div className="right-links">
