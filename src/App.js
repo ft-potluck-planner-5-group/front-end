@@ -9,6 +9,7 @@ import SignUp from './components/SignUp';
 import Products from './components/Products';
 import Product from './components/Product';
 import Login from './components/Login';
+import Logout from './components/Logout';
 
 import data from './data'
 function fetchStock() {
@@ -32,6 +33,7 @@ function App() {
         <Route exact path="/" component={Home}/>
 
         <Route path="/login" component={Login}/>
+        <Route path="/logout" component={Logout}/>
 
         <Route path="/signup" component={SignUp} /> 
      
