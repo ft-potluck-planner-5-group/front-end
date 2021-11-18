@@ -22,9 +22,7 @@ const formSubmit = (e) => {
     console.log("login : resp = ",resp);
     console.log("login : resp.data = ",resp.data.token);
     localStorage.setItem('token', resp.data.token);
-    // localStorage.setItem('token', resp.data.payload);
     push('/products');
-    // console.log(this.props)
     })
     .catch(err=>{
     console.log(err);

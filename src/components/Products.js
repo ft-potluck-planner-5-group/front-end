@@ -6,18 +6,8 @@ import '../CSS/products.css'
 import axiosWithAuth from './utils/axiosWithAuth';
 
 
-
-
-
-// {
-// 	"potluck_name": "hjhvj",
-// 	"date": '',
-// 	"location": "hvhv"
-// }
-
 const Products = (props) => {
 
-    // const {items} = props
     const [items, setItems] = useState([])
     const  url  = useRouteMatch().url;
 
@@ -30,11 +20,9 @@ const Products = (props) => {
           .catch(err => {
             console.log(err);
           })
-        // fetchStock().then(res => setItems(res.data))
       }, [])
 
     
-    // console.log("Products items = ", items)
 
     return(
         <div id="main">
