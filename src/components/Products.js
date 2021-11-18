@@ -7,6 +7,14 @@ import axiosWithAuth from './utils/axiosWithAuth';
 
 
 
+
+
+// {
+// 	"potluck_name": "hjhvj",
+// 	"date": '',
+// 	"location": "hvhv"
+// }
+
 const Products = (props) => {
 
     // const {items} = props
@@ -14,8 +22,9 @@ const Products = (props) => {
     const  url  = useRouteMatch().url;
 
     useEffect(() => {
-        axiosWithAuth().get('/products')
+        axiosWithAuth().get('https://backend-potluck-planner.herokuapp.com/api/potlucks')
           .then(resp => {
+            console.log("Products.js useEfect, resp", resp)
             setItems(resp.data);
           })
           .catch(err => {
@@ -50,7 +59,7 @@ const Products = (props) => {
                        
                     </div>
                     <div className={'text order'+ (((item.id+1)*2)+(item.id%2*(-1)) )%2  }>
-                        <h2>{item.name}</h2>
+                        <h2>{item.potluck_name}</h2>
                         {/* <p>{item.instructions}</p> */}
                         <p> Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis tempus.</p>
                         <Link to={`${url}/${item.id}`}>

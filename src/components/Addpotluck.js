@@ -9,7 +9,9 @@ import axiosWithAuth from './utils/axiosWithAuth';
 
 
 const initialFormValues = {
-    name: '',
+    potluck_name: '',
+    date: 11182021,
+    time: 1112,
     location: '',
 }
 
@@ -21,7 +23,7 @@ const initialFormErrors = {
 const initialDisabled = true
 
 
-export default function Addpotluck() {
+export default function Addpotluck(){
 
     const [formValues, setFormValues] = useState(initialFormValues)
     const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -33,7 +35,8 @@ export default function Addpotluck() {
 
     const postNewItem = newItem => {
         console.log("post Items=", newItem)
-        axiosWithAuth().post('/products', newItem)
+        // axiosWithAuth().post('https://backend-potluck-planner.herokuapp.com/api/potlucks', newItem)
+        axiosWithAuth().post('https://backend-potluck-planner.herokuapp.com/api/potlucks', newItem)
             .then(response => {
                 console.log(response);
                 push('/products');
@@ -62,7 +65,9 @@ export default function Addpotluck() {
 
     const submitItem = () => {
         const newItem = {
-            name: formValues.name, 
+            potluck_name: formValues.potluck_name, 
+            date: formValues.date,
+            time: formValues.time,
             location: formValues.location,
         }
         postNewItem(newItem)
@@ -96,8 +101,8 @@ export default function Addpotluck() {
                     <label >
                             <input
                                 type="text"
-                                name="name"
-                                value={formValues.name}
+                                name="potluck_name"
+                                value={formValues.potluck_name}
                                 onChange={onChange}
                                 placeholder="Potluck Name"
                             />
