@@ -17,11 +17,12 @@ const formSubmit = (e) => {
     e.preventDefault();
     setErrors(validation(values))
     e.preventDefault();
-    axios.post('http://localhost:4000/api/login', values)
+    axios.post('https://backend-potluck-planner.herokuapp.com/api/users/login', values)
     .then(resp=>{
     console.log("login : resp = ",resp);
-    console.log("login : resp.data = ",resp.data);
-    localStorage.setItem('token', resp.data.payload);
+    console.log("login : resp.data = ",resp.data.token);
+    localStorage.setItem('token', resp.data.token);
+    // localStorage.setItem('token', resp.data.payload);
     push('/products');
     // console.log(this.props)
     })
