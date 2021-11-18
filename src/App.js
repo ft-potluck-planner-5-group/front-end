@@ -11,7 +11,7 @@ import Products from './components/Products';
 import Product from './components/Product';
 import Login from './components/Login';
 import Logout from './components/Logout';
-
+import Addpotluck from './components/Addpotluck';
 
 function App() {
   return (
@@ -25,6 +25,7 @@ function App() {
         <Route path="/signup" component={SignUp} /> 
         <PrivateRoute path="/products/:id"   component={Product} /> 
         <PrivateRoute path="/products"   component={Products} /> 
+        <Route path="/postitem" component={Addpotluck}/>
   
     </Switch>
   </Router>
@@ -32,6 +33,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

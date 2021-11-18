@@ -19,6 +19,7 @@ const Header = () => {
                 {
                     isLoggedIn ? <Link className="link" to='/logout'>Logout</Link> : ''
                 }
+                <Link className="link" to='/postitem'>Post</Link>
                 
             </div>
         </nav>
