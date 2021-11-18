@@ -32,7 +32,7 @@ export default function Addpotluck() {
 
 
     const postNewItem = newItem => {
-        console.log("post Items")
+        console.log("post Items=", newItem)
         axiosWithAuth().post('/products', newItem)
             .then(response => {
                 console.log(response);
@@ -46,7 +46,7 @@ export default function Addpotluck() {
             })
     }
 
-    console.log("Addpotluck")
+    // console.log("Addpotluck")
 
 
     // const validate = (name, value) => {
@@ -76,6 +76,7 @@ export default function Addpotluck() {
     const onChange = event => {
         // validate(event.target.name, event.target.value)
         setFormValues({
+            ...formValues,
             [event.target.name]: event.target.value,
         })
     }
