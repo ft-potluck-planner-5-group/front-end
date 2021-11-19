@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 .nav-bar {
     /* display: flex;
     background-color: grey;
     margin: 0; */
     display: flex;
-    background-color: #6fc3df;
-    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
+    /* background-color: #6fc3df; */
+    background-color: #09331e;
+    /* box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15); */
+    box-shadow: 0 0 5px #cc5500, 0 0 10px #09331e;
     cursor: default;
     font-weight: 600;
     left: 0;
@@ -15,9 +18,9 @@
     text-transform: uppercase;
     top: 0;
     width: 100%;
+    font-family: 'Varela Round', sans-serif;
     /* z-index: 10000; */
 }
-
 .left-links {
     width: 50%;
     display: flex;
@@ -30,14 +33,29 @@
     justify-content: flex-end;
     margin-right: 1.5%;
 }
-
+.middle-title{
+    overflow: hidden;
+    width: 50%;
+}
+.middle-title h1{
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    color: #E5DCC3;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 3%;
+    text-shadow: 2px 2px #cc5500;
+}
 .link {
     text-decoration: none;
     padding: 2.5% 1.5%;
     color: #E5DCC3;
+    text-shadow: 2px 2px #cc5500;
+    transition-duration: 0.4s;
 }
 
 .link:hover {
-    text-decoration: underline;
-    color: white;
+    text-shadow: 2px 2px #cc5500;
+    color: #09331e;
 }

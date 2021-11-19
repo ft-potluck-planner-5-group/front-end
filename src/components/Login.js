@@ -28,6 +28,9 @@ const formSubmit = (e) => {
     console.log(err);
     })
 }
+const signupClick = () => {
+    push('/signup')
+}
 
 const inputChange = (evt) => {
     setValues({
@@ -43,16 +46,17 @@ return (
         <form className='form-wrap'>
             <label>
             {errors.name && <p className='error'>{errors.name}</p>}
-            Username: <input type="text" className='iput' name='username' value={values.username} onChange={inputChange} />
+            <input type="text" placeholder="Username" className='iput' name='username' value={values.username} onChange={inputChange} />
             </label>
             <label>
             {errors.password && <p className='error'>{errors.password}</p>}
-            Password: <input type="text" className='iput' name='password' value={values.password} onChange={inputChange} />
+            <input type="text" placeholder="Password" className='iput' name='password' value={values.password} onChange={inputChange} />
             </label>
         </form>
         <div>
-            <button className='button' onClick={formSubmit}>Login!</button>
+            <button className='button' onClick={formSubmit}>Login</button>
         </div>
+
     </div>
 </div>    
     )

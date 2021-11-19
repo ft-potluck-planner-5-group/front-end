@@ -13,6 +13,9 @@ const Header = () => {
                     isLoggedIn ? <Link className="link" to='/products'>Products</Link> : ''
                 }
             </div>
+            <div className="middle-title">
+                <h1>Potluck Planner</h1>
+            </div>
             <div className="right-links">
                 <Link className="link" to='/signup'>Signup</Link>
                 <Link className="link" to='/login'>Login</Link>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
 
 .signup-dev{
     
@@ -8,7 +9,7 @@
     justify-content: center;
     align-items: center;
     height: 93vh;
-    background-image: url('../images/food1.jpg');
+    background-image: url('../images/food7.jpg');
     background-size: cover;
     background-position: center;
     /* border:3px solid red; */
@@ -19,13 +20,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
-    width: 50%;
+    /* background-color: white;
+    width: 50%; */
     margin: 15% 20%;
     padding: 4% 0;
     border-radius: 20px;
     /* border:3px solid red; */
     /* #e6e6e6 */
+    background-color: #cc5500;
+    width: 25%;
+    height: 50%;
+    box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.15);
+    border-radius: 10%;
+    border:3px solid #09331e;
+    box-shadow: 0 0 5px #cc5500, 0 0 10px #09331e;
 }
 
 .app-wrapper , .form-wrapper{
@@ -40,46 +48,73 @@
 }
 
 .app-wrapper h1{
-    width: 100%;
+    /* width: 100%;
     text-align: center;
     color: #9541e8;
-    font: 2.1em sans-serif; 
+    font: 2.1em sans-serif;  */
     /* border:3px solid red; */
+    color: black;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    font-size: 3em;
+    padding-top: 0%;
+    margin-top: 0%;
+    margin-bottom: 10%;
+    text-shadow: 2px 2px #09331e;
 }
 .name, .email, .password {
     /* border:3px solid red;  */
     width: 60%;
 }
 .input {
-    width: 100%;
+    /* width: 100%;
     display: flex;
     margin-bottom: 10%;
-    outline-color: #9541e8;
+    outline-color: #9541e8; */
     /* width: 230px; */
-    height: 20px;
-    border-radius: 4px;
+    /* height: 20px;
+    border-radius: 4px; */
     /* border:3px solid red; */
+    display: flex;
+    margin-bottom: 10%;
+    outline-color: #09331e;
+    width: 230px;
+    height: 20px;
+    border-radius: 20px;
+    padding: 3%;
+    border-color: #09331e;
 }
 label {
     color: black;
-    font-family: 'Lato', sans-serif;
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Varela Round', sans-serif;
     font-size: 1.2em;
 }
 
 .subutton {
-    width: 80px;
+    /* width: 80px; */
     /* margin-left: 35%; */
-    background-image: linear-gradient(to right, #4d91ff, #a24ef5);
+    /* background-image: linear-gradient(to right, #4d91ff, #a24ef5);
     color: white;
     padding: 10%;
     border: none;
     border-radius: 20px;
     font-family: 'Lato', sans-serif;
     font-weight: bold;
-    border:none;
+    border:none; */
     /* width: 30%; */
+    color:  #E5DCC3;
+    background-color: #09331e;
+    border: 2px solid black;
+    border-radius: 20px;
+    font-family: 'Varela Round', sans-serif;
+    font-weight: bold;
+    transition-duration: 0.4s;
 }
 
 .subutton:hover {
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    /* box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4); */
+    background-color: white;
+    box-shadow: 2px 2px 8px #09331e;
+    color: black;
 }
